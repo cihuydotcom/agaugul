@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>For Aulia</title>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f7f0e9;--card:#fffaf5;--ink:#4a2f24;--soft:#7d6558;--line:#e6d6c8;--maroon:#7a1f2b;--brown:#8a5a3c;--acc:var(--maroon);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1e1411;--card:#2b1d18;--ink:#f1e2d6;--soft:#c3ab9b;--line:#4a3329;--maroon:#d4677a;--brown:#c99a78}}
+:root[data-theme="dark"]{--bg:#1e1411;--card:#2b1d18;--ink:#f1e2d6;--soft:#c3ab9b;--line:#4a3329;--maroon:#d4677a;--brown:#c99a78}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Poppins,system-ui,sans-serif;line-height:1.7;overflow-x:hidden;transition:background .4s}
+.sec{max-width:720px;margin:0 auto;padding:72px 22px;text-align:center}
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center}
+h1,h2{font-family:'Dancing Script',cursive;color:var(--acc);margin:0;transition:color .4s;line-height:1.15}
+h1{font-size:clamp(3.4rem,16vw,6rem)}h2{font-size:clamp(2rem,8vw,2.8rem);margin-bottom:18px}
+.small{letter-spacing:.2em;text-transform:uppercase;font-size:.75rem;color:var(--soft)}
+.sub{color:var(--soft);max-width:460px;margin:10px auto 0}
+.down{margin-top:44px;color:var(--acc);animation:bob 1.8s infinite;font-size:1.4rem;text-decoration:none}
+@keyframes bob{50%{transform:translateY(8px)}}
+p{color:var(--soft);margin:0 0 14px}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .8s,transform .8s}.rv.in{opacity:1;transform:none}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-top:22px}
+.pf{perspective:800px;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.fl{position:relative;height:130px;transform-style:preserve-3d;transition:transform .6s}
+.pf.on .fl{transform:rotateY(180deg)}
+.fl>div{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:18px;background:var(--card);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;padding:14px;font-size:.9rem;box-shadow:0 6px 18px #4a2f2414}
+.fl .ft{font-weight:600;font-size:1.02rem;color:var(--acc);flex-direction:column;gap:2px}
+.fl .bk{transform:rotateY(180deg);color:var(--soft);font-size:.82rem;line-height:1.5}
+.hint{font-size:.78rem;color:var(--soft);margin-top:14px}
+.sw{display:flex;gap:18px;justify-content:center;margin-top:20px}
+.sw button{width:96px;height:96px;border-radius:50%;border:4px solid var(--card);box-shadow:0 8px 20px #4a2f2433;color:#fff;font:500 .78rem Poppins;cursor:pointer;transition:transform .2s}
+.sw button:active{transform:scale(.92)}
+.food{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px 12px;transition:transform .25s}
+.food:hover{transform:translateY(-4px)}.food b{display:block;font-size:2rem}.food span{font-size:.88rem;color:var(--ink)}
+button{font:inherit}
+.btns{position:relative;height:300px;max-width:420px;margin:12px auto 0}
+.yes,.no{position:absolute;border:0;border-radius:999px;padding:14px 26px;color:#fff;cursor:pointer;font-size:1rem;white-space:nowrap;touch-action:manipulation}
+.yes{background:var(--acc);left:50%;top:38%;transform:translate(-50%,-50%) scale(var(--s,1));box-shadow:0 8px 20px #7a1f2b44;transition:transform .2s,background .4s;z-index:2}
+.no{background:#7b6f69;left:50%;top:78%;transform:translateX(-50%);transition:left .25s,top .25s}
+#msg{min-height:1.6em;color:var(--soft);font-size:.92rem}
+#win{display:none}
+.card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:22px 20px;margin:16px 0;text-align:left}
+.card h2{font-size:1.9rem;margin-bottom:8px}
+#letter{white-space:pre-line;line-height:1.75;font-size:.95rem;color:var(--soft);min-height:11em}
+#timer{font-size:1.2rem;font-weight:600;color:var(--acc);text-align:center}
+.c{position:fixed;top:-30px;z-index:9;pointer-events:none;animation:fall linear forwards}
+@keyframes fall{to{transform:translateY(110vh) rotate(540deg)}}
+footer{padding:40px 20px;text-align:center;color:var(--soft);font-size:.8rem}
+</style>
+</head>
+<body>
+
+<section class="sec hero">
+  <div class="small">A small page for</div>
+  <h1 id="nm">Aulia</h1>
+  <div style="font-family:'Dancing Script',cursive;font-size:1.6rem;color:var(--soft)">liacantik</div>
+  <p class="sub">Smart, kind, and brave. Ini halaman kecil tentang kamu.</p>
+  <a class="down" href="#about" aria-label="scroll">&#8595;</a>
+</section>
+
+<section class="sec rv" id="about">
+  <h2>Tentang kamu</h2>
+  <p>Kita kenal udah setahun. Sempat lama nggak ngobrol, terus sebulan ini chatting lagi, dan jujur, rasanya jauh lebih enak dari sebelumnya.</p>
+  <p>Kamu pintar, baik, berani, dan di mata aku kamu cantik banget, dari luar sampai dalam. Dulu aku pernah nyebut kamu banyak hal: my grey, my max version, my motivator in life, my tujuan cinta, my iris, my love sejati, my beautiful girl, my spirit kehidupan, my rest of kehidupan. Intinya, my everything. Dan sampai sekarang, semua itu masih terasa benar.</p>
+  <p>Selain cantik, ini tiga hal yang bikin aku kagum sama kamu:</p>
+  <div class="grid">
+    <div class="pf"><div class="fl"><div class="ft">Smart</div><div class="bk">Cara kamu mikir bikin aku sering belajar hal baru.</div></div></div>
+    <div class="pf"><div class="fl"><div class="ft">Kind</div><div class="bk">Kamu baik ke orang lain, bahkan pas nggak ada yang lihat.</div></div></div>
+    <div class="pf"><div class="fl"><div class="ft">Brave</div><div class="bk">Kamu berani jadi diri sendiri. Aku suka itu.</div></div></div>
+  </div>
+  <div class="hint">tap kartunya</div>
+</section>
+
+<section class="sec rv">
+  <h2>Warna favoritmu</h2>
+  <p>Brown sama maroon. Coba tap, warna halamannya ikut berubah.</p>
+  <div class="sw">
+    <button style="background:var(--maroon)" data-c="maroon">Maroon</button>
+    <button style="background:var(--brown)" data-c="brown">Brown</button>
+  </div>
+</section>
+
+<section class="sec rv">
+  <h2>Lagu favoritmu</h2>
+  <p>Tiga lagu kesukaan kamu, yang sekarang bikin aku ingat kamu tiap dengar.</p>
+  <div class="grid">
+    <div class="pf"><div class="fl"><div class="ft">Look After You</div><div class="bk">Lagu favoritmu. Tiap dengar ini, aku jadi ingat kamu.</div></div></div>
+    <div class="pf"><div class="fl"><div class="ft">Everything Is Embarrassing</div><div class="bk">Salah satu lagu favorit kamu.</div></div></div>
+    <div class="pf"><div class="fl"><div class="ft">Tsunami</div><div class="bk">Lagu ini ngingetin aku ke kamu.</div></div></div>
+  </div>
+  <div class="hint">tap kartunya</div>
+</section>
+
+<section class="sec rv">
+  <h2>Makanan favoritmu</h2>
+  <p>Someday, aku mau makan ini semua sama kamu.</p>
+  <div class="grid">
+    <div class="food"><b>🍤</b><span>Udang cabe garam (pujas)</span></div>
+    <div class="food"><b>🥟</b><span>Dimsum</span></div>
+    <div class="food"><b>🍲</b><span>Semua masakan Mama</span></div>
+  </div>
+</section>
+
+<section class="sec rv" id="ask">
+  <div id="q">
+    <h2>Will You Be My Girlfriend?</h2>
+    <p>Be my baby. I’ll look after you.</p>
+    <div class="btns" id="arena">
+      <button class="yes" id="yes">Yes, I do</button>
+      <button class="no" id="no">No, leave me alone</button>
+    </div>
+    <div id="msg"></div>
+  </div>
+  <div id="win">
+    <h2>Thank you</h2>
+    <div class="card"><h2 id="lt">For you</h2><div id="letter"></div></div>
+    <div class="card"><h2>Resmi sejak</h2><div id="timer">0 detik</div></div>
+  </div>
+</section>
+
+<footer>Dibuat buat Aulia</footer>
+
+<script>
+var q=new URLSearchParams(location.search),to=q.get('to')||'Aulia',from=q.get('from')||'Aku';
+document.getElementById('nm').textContent=to;
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)e.target.classList.add('in')})},{threshold:.12});
+document.querySelectorAll('.rv').forEach(function(e){io.observe(e)});
+document.querySelectorAll('.pf').forEach(function(e){e.addEventListener('click',function(){e.classList.toggle('on')})});
+document.querySelectorAll('.sw button').forEach(function(b){b.addEventListener('click',function(){document.documentElement.style.setProperty('--acc','var(--'+b.dataset.c+')')})});
+
+var yes=document.getElementById('yes'),no=document.getElementById('no'),msg=document.getElementById('msg'),ar=document.getElementById('arena');
+var lines=["Eh, salah pencet. Coba lagi ya","Tombolnya lagi malu-malu","Take your time, aku nggak buru-buru","Yakin nih?","Santai aja, aku tunggu kok","Coba yang atas deh","Aku masih di sini kok"];
+var n=0,sc=1;
+function dodge(ev){
+  if(ev&&ev.cancelable)ev.preventDefault();
+  var a=ar.getBoundingClientRect(),y0=yes.getBoundingClientRect(),w=no.offsetWidth,h=no.offsetHeight,x,y,t=0;
+  do{x=Math.random()*(a.width-w);y=Math.random()*(a.height-h);t++}
+  while(t<40&&x+a.left<y0.right+8&&x+a.left+w>y0.left-8&&y+a.top<y0.bottom+8&&y+a.top+h>y0.top-8);
+  no.style.transform='none';no.style.left=x+'px';no.style.top=y+'px';
+  msg.textContent=lines[n++%lines.length];
+  sc=Math.min(sc+.07,1.5);yes.style.setProperty('--s',sc);
+}
+['pointerenter','touchstart','click'].forEach(function(t){no.addEventListener(t,dodge,{passive:false})});
+
+function confetti(){for(var i=0;i<40;i++){(function(i){setTimeout(function(){var e=document.createElement('span');e.className='c';e.textContent='❤️';e.style.left=Math.random()*100+'vw';e.style.fontSize=(16+Math.random()*22)+'px';e.style.animationDuration=(2.5+Math.random()*2.5)+'s';document.body.appendChild(e);setTimeout(function(){e.remove()},5500)},i*40)})(i)}}
+var text="Hi "+to+",\n\nMakasih ya udah bilang iya, dan makasih juga udah ngasih kita waktu buat sampai di titik ini. Kamu pintar, baik, dan berani, dan ngobrol sama kamu selalu bikin aku tenang.\n\nAku tau kita baru ngobrol lagi sebulan ini, tapi jujur rasanya jauh lebih enak sekarang, dan aku bersyukur banget.\n\nAku nggak janji bakal sempurna, tapi aku bakal terus berusaha. Pelan-pelan aja ya, one day at a time.\n\n— "+from;
+function type(i){if(i<=text.length){document.getElementById('letter').textContent=text.slice(0,i);setTimeout(function(){type(i+1)},28)}}
+var start;
+function tick(){var s=Math.floor((Date.now()-start)/1000),m=Math.floor(s/60),h=Math.floor(m/60);document.getElementById('timer').textContent=(h?h+' jam ':'')+(m%60?m%60+' menit ':'')+(s%60)+' detik'}
+yes.addEventListener('click',function(){
+  document.getElementById('q').style.display='none';
+  document.getElementById('win').style.display='block';
+  document.getElementById('lt').textContent='Buat kamu, '+to;
+  confetti();type(0);start=Date.now();tick();setInterval(tick,1000);
+  document.getElementById('ask').scrollIntoView({behavior:'smooth',block:'start'});
+});
+</script>
+</body>
+</html>
